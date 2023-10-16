@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:columnCount="2"
+        app:rowCount="4">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Eje Y"
+            app:layout_columnSpan="2"
+            app:layout_rowWeight="10" />
+
+        <ProgressBar
+            android:id="@+id/pb_vertical"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:max="200"
+            android:rotation="270"
+            android:scaleX="5"
+            android:scaleY="5"
+            app:layout_columnWeight="10"
+            app:layout_gravity="center"
+            app:layout_rowWeight="90" />
+
+        <FrameLayout
+            android:id="@+id/fl_target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            app:layout_columnWeight="90"
+            app:layout_rowWeight="90">
+
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_horizontal"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:max="200"
+            android:scaleX="5"
+            android:scaleY="5"
+            app:layout_columnSpan="2"
+            app:layout_columnWeight="10"
+            app:layout_gravity="center"
+            app:layout_rowWeight="10" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eje X"
+            android:textAlignment="center"
+            app:layout_columnSpan="2"
+            app:layout_rowWeight="1" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
