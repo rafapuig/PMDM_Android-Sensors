@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Sensors"
 include(":level")
 include(":acceleration")
+include(":touch")
