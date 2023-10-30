@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/acceleration" />
             <option value="$PROJECT_DIR$/level" />
+            <option value="$PROJECT_DIR$/location" />
             <option value="$PROJECT_DIR$/touch" />
           </set>
         </option>

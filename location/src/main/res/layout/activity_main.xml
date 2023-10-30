@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:columnCount="2"
+            app:rowCount="10">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Network location:"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+
+            <TextView
+                android:id="@+id/tv_network_coords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gps location:"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+
+            <TextView
+                android:id="@+id/tv_gps_coords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="2" />
+
+            <RadioGroup
+                android:id="@+id/rg_selected_provider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <RadioButton
+                    android:id="@+id/rb_network"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Network" />
+
+                <RadioButton
+                    android:id="@+id/rb_gps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gps" />
+
+            </RadioGroup>
+
+            <ToggleButton
+                android:id="@+id/tb_switch_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textOff="Location read OFF"
+                android:textOn="Location read ON"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="2" />
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <ScrollView
+                android:layout_width="250dp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </ScrollView>
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mv_mapa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+</LinearLayout>
