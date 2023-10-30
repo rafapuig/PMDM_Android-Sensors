@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Get references to interface components
 
         // TODO: get the references for googleMapsView, tvNetworkCoords, tvGpsCoords y tvInfo
-        googleMapsView = findViewById(R.id.mv_mapa);
-        tvNetworkCoords = findViewById(R.id.tv_network_coords);
-        tvGpsCoords = findViewById(R.id.tv_gps_coords);
-        tvInfo = findViewById(R.id.tv_info);
+        googleMapsView = ...
+        tvNetworkCoords = ...
+        tvGpsCoords = ...
+        tvInfo = ...
 
 
         // Register listeners
@@ -73,9 +73,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         // turn off the listener, update the current provider and turn it back on.
 
                         // TODO: call to turnOffListener, update currentProvider and call to a turnOnListener
-                        turnOffListener();
-                        currentProvider = checkedId == R.id.rb_gps ? LocationManager.GPS_PROVIDER : LocationManager.NETWORK_PROVIDER;
-                        turnOnListener();
+
 
                         report("Changing to provider " + currentProvider + "...");
                     }
@@ -90,13 +88,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         // TODO: if the button is pressed, call to initializeListener (that will give value to the variable "listener")
                         //  and call to turnOnListener
                         //  if not, call to turnOffListener and set the variable "listener" to null
-                        if (isChecked) {
-                            initializeListener();
-                            turnOnListener();
-                        } else {
-                            turnOffListener();
-                            listener = null;
-                        }
+
 
                     }
                 });
@@ -111,10 +103,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onLocationChanged(@NonNull Location location) {
                 //TODO: In which text box we print (network or gps). We have the variable "currentProvider"
-                TextView whichTextView = currentProvider == LocationManager.NETWORK_PROVIDER ? tvNetworkCoords : tvGpsCoords;
 
                 //TODO: Print these coordinates in this text box
-                printCoordinates(location, whichTextView);
             }
 
             @Override
@@ -136,12 +126,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         // you must also ask for explicit permissions from the user).
 
         // TODO
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) !=
-                PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
-                        PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+
     }
 
     private void setInitialLocalization() {
@@ -150,13 +135,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Location locGps = null;
 
         // TODO: Get the location manager "locationManager".
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         try {
             // TODO: Get last known coordinates for the network provider
-            locRed = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            locRed = ...
             // TODO: Get last known coordinates for the gps provider
-            locGps = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            locGps = ...
         } catch (SecurityException e) {
             // When we get the last known coordinates, an error of permissions not being granted may occur!
             report("Error obtaining coordinates: " + e.getMessage());
@@ -173,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             report("New location!");
 
             // TODO: Print the coordinates in the TextView
-            which.setText("Lat: " + location.getLatitude() + ", Long: " + location.getLongitude() + ", Alt: " + location.getAltitude());
 
             readMapCoords = location; // Define new coordinates to put on the map
             placeMarkerOnMap(); // and place a pin
@@ -191,7 +174,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 // as long as the minimum displacement distance is 1 metre, from the "currentProvider".
 
                 // TODO: register the listener
-                locationManager.requestLocationUpdates(currentProvider, 100, 1, listener);
 
             } catch (SecurityException e) {
                 // When we try to register the listener, we may get an error that permissions have not been granted!
@@ -207,7 +189,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             report("Turning off the listener...");
 
             // TODO: unregister the listener
-            locationManager.removeUpdates(listener);
         }
     }
 
