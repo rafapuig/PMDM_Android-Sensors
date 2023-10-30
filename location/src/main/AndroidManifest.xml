@@ -13,8 +13,8 @@
         android:theme="@style/Theme.Sensors">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,7 @@
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDTvr3cezpd6IRb16S8pGHdOQEWwMvM9xA"/>
+            android:value="AIzaSyDTvr3cezpd6IRb16S8pGHdOQEWwMvM9xA" />
     </application>
 
 </manifest>
